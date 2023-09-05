@@ -39,8 +39,14 @@ Then, we will replace this address with the address of a memory area that will c
 
 
 - First, we need to know from how many characters the return address of our function starts to be substituted. It can be done quickly using a tool like [Metasploit](https://en.wikipedia.org/wiki/Metasploit).
->`msf-pattern_offset -l [pattern length] -q [saved EIP address]`
+```
+$msf-pattern_create -l [pattern length] | [binary]
+... get overried EIP address from GDB
+```
 
+```
+$msf-pattern_offset -l [pattern length] -q [overried EIP address]
+```
 
 - The return address is found to be replaced after the 76th character:
 ```
