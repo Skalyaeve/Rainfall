@@ -30,7 +30,7 @@ total 732
 ```
 
 
-- A binary has been left for us, It belongs to the user of the next level. Additionally, [the setuid and setgid permission bits](https://en.wikipedia.org/wiki/Setuid) are set.
+- A binary has been left for us, it belongs to the user of the next level. Additionally, [the setuid and setgid permission bits](https://en.wikipedia.org/wiki/Setuid) are set.
 Thus, this binary is executed with the privileges of user level1.
 Let's take a closer look at this binary using [GDB](https://en.wikipedia.org/wiki/GNU_Debugger).
 ```
@@ -91,10 +91,8 @@ End of assembler dump.
 ```
 
 
-- We can see that the program moves values onto the stack to prepare for a call to `<atoi>` (probably one of the parameters it takes). The return of `<atoi>` is then compared to the hexadecimal value 1a7 (423) to determine the sequence of instructions to execute. In case the two values are not equal, we attempt to `<fwrite>` something before exiting.
-
-
-- In the other case, we will use `<getegid>`, `<getegid>`, `<getegid>`, and `<getegid>` to define the effective user under which the program is running, and then launch execve with the value located at `0x80c5348` as a parameter:
+- We can see that the program moves values onto the stack to prepare for a call to `<atoi>` (probably one of the parameters the program takes). The return of `<atoi>` is then compared to the hexadecimal value 1a7 (423) to determine the sequence of instructions to execute. In case the two values are not equal, we attempt to `<fwrite>` something before exiting.
+In the other case, call `<execv>` with the value located at `0x80c5348` as a parameter:
 ```
 (gdb) x/s 0x80c5348
 0x80c5348:       "/bin/sh"
