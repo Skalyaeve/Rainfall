@@ -1,6 +1,6 @@
 # level01
 
-- We login as user level00, this is then displayed:
+- We login as user level01:
 ```
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   /home/user/level1/level1
