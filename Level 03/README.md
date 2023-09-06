@@ -70,8 +70,11 @@ End of assembler dump.
    0x080484c7 <+35>:    call   0x80483a0 <fgets@plt>
 ```
 >`0x8049860 <stdin@@GLIBC_2.0>:   0xb7fd1ac0`
+
 >buffer size is 0x200 bytes
+
 >buffer starts at `-0x208(%ebp)`
+
 >Prompt the user for up to 512 bytes.
 
 ```
@@ -87,6 +90,7 @@ End of assembler dump.
    0x080484e2 <+62>:    jne    0x8048518 <v+116>
 ```
 >`0x804988c <m>:  0x00000000`
+
 >After the call to `<printf@plt>`, compare the value located at `0x804988c` with the constant 0x40 (64 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we continue.
 
 ```
@@ -100,7 +104,9 @@ End of assembler dump.
    0x08048507 <+99>:    call   0x80483b0 <fwrite@plt>
 ```
 >`0x8049880 <stdout@@GLIBC_2.0>:  0xb7fd1a20`
+
 >`0x8048600:       "Wait what?!\n"`
+
 >Print `"Wait what?!\n"` into `<stdout>`.
 
 ```
@@ -108,6 +114,7 @@ End of assembler dump.
    0x08048513 <+111>:   call   0x80483c0 <system@plt>
 ```
 >`0x804860d:       "/bin/sh"`
+
 >Open a terminal.
 
 

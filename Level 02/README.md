@@ -70,6 +70,7 @@ End of assembler dump.
    0x080484e2 <+14>:    call   0x80483b0 <fflush@plt>
 ```
 >`0x8049860 <stdout@@GLIBC_2.0>: 0xb7fd1a20`
+
 >Call `<fflush@plt>`.
 
 
@@ -79,6 +80,7 @@ End of assembler dump.
    0x080484ed <+25>:    call   0x80483c0 <gets@plt>
 ```
 >buffer starts at `-0x4c(%ebp)`
+
 >Prompt the user without imposing any input size limit.
 
 
@@ -91,7 +93,9 @@ End of assembler dump.
    0x08048505 <+49>:    jne    0x8048527 <p+83>
 ```
 >`0x4(%ebp) --> 0xbffff70c`
+
 >`0xbffff70c:     0x0804854a`
+
 >`saved eip 0x804854a`
 >After receiving the input, if the return address of the function starts with `0xb`, we will call `<printf@plt>` and then `<_exit@plt>`. Otherwise, we jump to `<puts@plt>`.
 
@@ -104,8 +108,11 @@ End of assembler dump.
    0x08048516 <+66>:    call   0x80483a0 <printf@plt>
 ```
 >`0x8048620: "(%p)\n"`
+
 >`-0xc(%ebp) --> 0xbffff70c`
+
 >`0xbffff70c:     0x0804854a`
+
 >`saved eip 0x804854a`
 >Print the function return address.
 
@@ -123,6 +130,7 @@ End of assembler dump.
    0x0804852d <+89>:    call   0x80483f0 <puts@plt>
 ```
 >buffer starts at `-0x4c(%ebp)`
+
 >Print the buffer
 
 
@@ -132,6 +140,7 @@ End of assembler dump.
    0x08048538 <+100>:   call   0x80483e0 <strdup@plt>
 ```
 >buffer starts at `-0x4c(%ebp)`
+
 >Cpy the buffer into the heap.
 
 
