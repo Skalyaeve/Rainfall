@@ -1,4 +1,4 @@
-# level0
+# Level 0
 
 - We login as user level0, this is then displayed:
 ```

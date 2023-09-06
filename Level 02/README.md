@@ -1,4 +1,4 @@
-# level2
+# Level 2
 
 - We login as user level2:
 ```
