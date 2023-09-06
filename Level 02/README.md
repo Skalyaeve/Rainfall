@@ -94,7 +94,7 @@ End of assembler dump.
 ```
 >`0x4(%ebp) --> 0xbffff70c`
 
->`0xbffff70c:     0x0804854a`
+>`0xbffff70c: 0x0804854a`
 
 >`saved eip 0x804854a`
 
@@ -112,7 +112,7 @@ End of assembler dump.
 
 >`-0xc(%ebp) --> 0xbffff70c`
 
->`0xbffff70c:     0x0804854a`
+>`0xbffff70c: 0x0804854a`
 
 >`saved eip 0x804854a`
 

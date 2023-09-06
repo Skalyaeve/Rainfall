@@ -114,7 +114,7 @@ Dump of assembler code for function o:
    0x080484bd <+25>:    call   0x8048390 <_exit@plt>
 End of assembler dump.
 ```
->`0x80485f0:       "/bin/sh"`
+>`0x80485f0: "/bin/sh"`
 
 
 - Look! A function that is not called anywhere but calls `system("/bin/sh")`! By putting the value `0804 84a4` into `0x8049838`, the program's execution should be redirected to this function.

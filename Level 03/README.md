@@ -69,7 +69,7 @@ End of assembler dump.
    0x080484c4 <+32>:    mov    %eax,(%esp)
    0x080484c7 <+35>:    call   0x80483a0 <fgets@plt>
 ```
->`0x8049860 <stdin@@GLIBC_2.0>:   0xb7fd1ac0`
+>`0x8049860 <stdin@@GLIBC_2.0>: 0xb7fd1ac0`
 
 >buffer size is 0x200 bytes
 
@@ -105,7 +105,7 @@ End of assembler dump.
 ```
 >`0x8049880 <stdout@@GLIBC_2.0>:  0xb7fd1a20`
 
->`0x8048600:       "Wait what?!\n"`
+>`0x8048600: "Wait what?!\n"`
 
 >>Print `"Wait what?!\n"` into `<stdout>`.
 
@@ -113,7 +113,7 @@ End of assembler dump.
    0x0804850c <+104>:   movl   $0x804860d,(%esp)
    0x08048513 <+111>:   call   0x80483c0 <system@plt>
 ```
->`0x804860d:       "/bin/sh"`
+>`0x804860d: "/bin/sh"`
 
 >>Open a terminal.
 
