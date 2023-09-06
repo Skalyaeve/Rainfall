@@ -1,6 +1,6 @@
-# level00
+# level0
 
-- We login as user level00, this is then displayed:
+- We login as user level0, this is then displayed:
 ```
 GCC stack protector support:            Enabled
 Strict user copy checks:                Disabled
@@ -101,7 +101,7 @@ In the other case, call `<execv>` with the value located at `0x80c5348` as a par
 
 - Thus:
 ```
-level0@RainFall:~$ ./level0 423
+level0@RainFall:~$ ./level 423
 $ whoami
 level1
 $ cat /home/user/level1/.pass
