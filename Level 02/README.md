@@ -71,7 +71,7 @@ End of assembler dump.
 ```
 >`0x8049860 <stdout@@GLIBC_2.0>: 0xb7fd1a20`
 
->Call `<fflush@plt>`.
+>>Call `<fflush@plt>`.
 
 
 ```
@@ -81,7 +81,7 @@ End of assembler dump.
 ```
 >buffer starts at `-0x4c(%ebp)`
 
->Prompt the user without imposing any input size limit.
+>>Prompt the user without imposing any input size limit.
 
 
 ```
@@ -97,7 +97,8 @@ End of assembler dump.
 >`0xbffff70c:     0x0804854a`
 
 >`saved eip 0x804854a`
->After receiving the input, if the return address of the function starts with `0xb`, we will call `<printf@plt>` and then `<_exit@plt>`. Otherwise, we jump to `<puts@plt>`.
+
+>>After receiving the input, if the return address of the function starts with `0xb`, we will call `<printf@plt>` and then `<_exit@plt>`. Otherwise, we jump to `<puts@plt>`.
 
 
 ```
@@ -114,14 +115,15 @@ End of assembler dump.
 >`0xbffff70c:     0x0804854a`
 
 >`saved eip 0x804854a`
->Print the function return address.
+
+>>Print the function return address.
 
 
 ```
    0x0804851b <+71>:    movl   $0x1,(%esp)
    0x08048522 <+78>:    call   0x80483d0 <_exit@plt>
 ```
->Call `exit(1)`
+>>Call `exit(1)`
 
 
 ```
@@ -131,7 +133,7 @@ End of assembler dump.
 ```
 >buffer starts at `-0x4c(%ebp)`
 
->Print the buffer
+>>Print the buffer
 
 
 ```
@@ -141,7 +143,7 @@ End of assembler dump.
 ```
 >buffer starts at `-0x4c(%ebp)`
 
->Cpy the buffer into the heap.
+>>Copy the buffer into the heap.
 
 
 - To redirect the program's execution flow, the function must `return`, so we must avoid `<_exit@plt>`.
