@@ -60,21 +60,21 @@ End of assembler dump.
 
 >buffer starts at `-0x208(%ebp)`
 
->>Prompt the user for up to 512 bytes.
+>Prompt the user for up to 512 bytes.
 
 ```
    0x080484ea <+40>:    lea    -0x208(%ebp),%eax
    0x080484f0 <+46>:    mov    %eax,(%esp)
    0x080484f3 <+49>:    call   0x8048380 <printf@plt>
 ```
->>Call `<printf@plt>` with our buffer.
+>Call `<printf@plt>` with our buffer.
 
 
 ```
    0x080484f8 <+54>:    movl   $0x1,(%esp)
    0x080484ff <+61>:    call   0x80483d0 <exit@plt>
 ```
->>Call `exit()`
+>Call `exit()`
 
 
 - Thanks to `<printf@plt>`, we can redirect the program's execution flow by modifying the behavior of `call 0x80483d0 <exit@plt>`.

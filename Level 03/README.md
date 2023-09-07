@@ -75,14 +75,14 @@ End of assembler dump.
 
 >buffer starts at `-0x208(%ebp)`
 
->>Prompt the user for up to 512 bytes.
+>Prompt the user for up to 512 bytes.
 
 ```
    0x080484cc <+40>:    lea    -0x208(%ebp),%eax
    0x080484d2 <+46>:    mov    %eax,(%esp)
    0x080484d5 <+49>:    call   0x8048390 <printf@plt>
 ```
->>Call `<printf@plt>` with our buffer as first parameter.
+>Call `<printf@plt>` with our buffer as first parameter.
 
 ```
    0x080484da <+54>:    mov    0x804988c,%eax
@@ -91,7 +91,7 @@ End of assembler dump.
 ```
 >`0x804988c <m>:  0x00000000`
 
->>After the call to `<printf@plt>`, compare the value located at `0x804988c` with the constant 0x40 (64 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we continue.
+>After the call to `<printf@plt>`, compare the value located at `0x804988c` with the constant 0x40 (64 in decimal). If the two values differ, we `leave` and then `ret`, otherwise we continue.
 
 ```
    0x080484e4 <+64>:    mov    0x8049880,%eax
@@ -107,7 +107,7 @@ End of assembler dump.
 
 >`0x8048600: "Wait what?!\n"`
 
->>Print `"Wait what?!\n"` into `<stdout>`.
+>Print `"Wait what?!\n"` into `<stdout>`.
 
 ```
    0x0804850c <+104>:   movl   $0x804860d,(%esp)
@@ -115,7 +115,7 @@ End of assembler dump.
 ```
 >`0x804860d: "/bin/sh"`
 
->>Open a terminal.
+>Open a terminal.
 
 
 - This exercice is an introduction to [format string exploit](https://axcheron.github.io/exploit-101-format-strings/).
