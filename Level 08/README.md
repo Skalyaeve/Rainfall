@@ -23,7 +23,6 @@ Dump of assembler code for function main:
    0x08048569 <+5>:     and    $0xfffffff0,%esp
    0x0804856c <+8>:     sub    $0xa0,%esp
    0x08048572 <+14>:    jmp    0x8048575 <main+17>
-
    0x08048574 <+16>:    nop
    0x08048575 <+17>:    mov    0x8049ab0,%ecx
    0x0804857b <+23>:    mov    0x8049aac,%edx
@@ -32,7 +31,6 @@ Dump of assembler code for function main:
    0x0804858a <+38>:    mov    %edx,0x4(%esp)
    0x0804858e <+42>:    mov    %eax,(%esp)
    0x08048591 <+45>:    call   0x8048410 <printf@plt>
-
    0x08048596 <+50>:    mov    0x8049a80,%eax
    0x0804859b <+55>:    mov    %eax,0x8(%esp)
    0x0804859f <+59>:    movl   $0x80,0x4(%esp)
@@ -41,8 +39,6 @@ Dump of assembler code for function main:
    0x080485ae <+74>:    call   0x8048440 <fgets@plt>
    0x080485b3 <+79>:    test   %eax,%eax
    0x080485b5 <+81>:    je     0x804872c <main+456>
-
---------------------------------------------------------
    0x080485bb <+87>:    lea    0x20(%esp),%eax
    0x080485bf <+91>:    mov    %eax,%edx
    0x080485c1 <+93>:    mov    $0x8048819,%eax
@@ -58,13 +54,11 @@ Dump of assembler code for function main:
    0x080485dd <+121>:   movsbl %al,%eax
    0x080485e0 <+124>:   test   %eax,%eax
    0x080485e2 <+126>:   jne    0x8048642 <main+222>
-
    0x080485e4 <+128>:   movl   $0x4,(%esp)
    0x080485eb <+135>:   call   0x8048470 <malloc@plt>
    0x080485f0 <+140>:   mov    %eax,0x8049aac
    0x080485f5 <+145>:   mov    0x8049aac,%eax
    0x080485fa <+150>:   movl   $0x0,(%eax)
-
    0x08048600 <+156>:   lea    0x20(%esp),%eax
    0x08048604 <+160>:   add    $0x5,%eax
    0x08048607 <+163>:   movl   $0xffffffff,0x1c(%esp)
@@ -78,15 +72,12 @@ Dump of assembler code for function main:
    0x08048622 <+190>:   sub    $0x1,%eax
    0x08048625 <+193>:   cmp    $0x1e,%eax
    0x08048628 <+196>:   ja     0x8048642 <main+222>
-
    0x0804862a <+198>:   lea    0x20(%esp),%eax
    0x0804862e <+202>:   lea    0x5(%eax),%edx
    0x08048631 <+205>:   mov    0x8049aac,%eax
    0x08048636 <+210>:   mov    %edx,0x4(%esp)
    0x0804863a <+214>:   mov    %eax,(%esp)
    0x0804863d <+217>:   call   0x8048460 <strcpy@plt>
-
---------------------------------------------------------
    0x08048642 <+222>:   lea    0x20(%esp),%eax
    0x08048646 <+226>:   mov    %eax,%edx
    0x08048648 <+228>:   mov    $0x804881f,%eax
@@ -102,12 +93,9 @@ Dump of assembler code for function main:
    0x08048664 <+256>:   movsbl %al,%eax
    0x08048667 <+259>:   test   %eax,%eax
    0x08048669 <+261>:   jne    0x8048678 <main+276>
-
    0x0804866b <+263>:   mov    0x8049aac,%eax
    0x08048670 <+268>:   mov    %eax,(%esp)
    0x08048673 <+271>:   call   0x8048420 <free@plt>
-
---------------------------------------------------------
    0x08048678 <+276>:   lea    0x20(%esp),%eax
    0x0804867c <+280>:   mov    %eax,%edx
    0x0804867e <+282>:   mov    $0x8048825,%eax
@@ -123,14 +111,11 @@ Dump of assembler code for function main:
    0x0804869a <+310>:   movsbl %al,%eax
    0x0804869d <+313>:   test   %eax,%eax
    0x0804869f <+315>:   jne    0x80486b5 <main+337>
-   
    0x080486a1 <+317>:   lea    0x20(%esp),%eax
    0x080486a5 <+321>:   add    $0x7,%eax
    0x080486a8 <+324>:   mov    %eax,(%esp)
    0x080486ab <+327>:   call   0x8048430 <strdup@plt>
    0x080486b0 <+332>:   mov    %eax,0x8049ab0
-
---------------------------------------------------------
    0x080486b5 <+337>:   lea    0x20(%esp),%eax
    0x080486b9 <+341>:   mov    %eax,%edx
    0x080486bb <+343>:   mov    $0x804882d,%eax
@@ -146,7 +131,6 @@ Dump of assembler code for function main:
    0x080486d7 <+371>:   movsbl %al,%eax
    0x080486da <+374>:   test   %eax,%eax
    0x080486dc <+376>:   jne    0x8048574 <main+16>
-
    0x080486e2 <+382>:   mov    0x8049aac,%eax
    0x080486e7 <+387>:   mov    0x20(%eax),%eax
    0x080486ea <+390>:   test   %eax,%eax
@@ -154,8 +138,6 @@ Dump of assembler code for function main:
    0x080486ee <+394>:   movl   $0x8048833,(%esp)
    0x080486f5 <+401>:   call   0x8048480 <system@plt>
    0x080486fa <+406>:   jmp    0x8048574 <main+16>
-
--------------------------------------------------------
    0x080486ff <+411>:   mov    0x8049aa0,%eax
    0x08048704 <+416>:   mov    %eax,%edx
    0x08048706 <+418>:   mov    $0x804883b,%eax

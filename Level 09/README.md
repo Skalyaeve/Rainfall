@@ -78,6 +78,7 @@ Dump of assembler code for function _ZN1NC2Ei:
 End of assembler dump.
 ```
 >`0x8048848 <_ZTV1N+8>: 0x0804873a`
+
 >`0x804873a <_ZN1NplERS_>: 0x8be58955`
 
 ```
@@ -114,6 +115,7 @@ End of assembler dump.
    0x0804862e <+58>:    mov    %ebx,0x1c(%esp)
 ```
 >Call `<_ZN1NC2Ei>` with the new buffer. The buffer address will be copied at `0x1c(%esp)`.
+
 >The `<_ZN1NC2Ei>` function copies the address of a function at the beginning of the buffer passed as a parameter.
 
 ```
@@ -140,6 +142,7 @@ End of assembler dump.
    0x08048677 <+131>:   call   0x804870e <_ZN1N13setAnnotationEPc>
 ```
 >Call `<_ZN1N13setAnnotationEPc>` with the first argument of the program and the first buffer as parameters.
+
 >The `<_ZN1N13setAnnotationEPc>` function copy the first argument of the program into the buffer right after the address added by `<_ZN1NC2Ei>`.
 
 ```
