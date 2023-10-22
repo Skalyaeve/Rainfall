@@ -113,7 +113,7 @@ End of assembler dump.
    0x080485b1 <+13>:    mov    %eax,(%esp)
    0x080485b4 <+16>:    call   0x804851e <pp>
 ```
-> The `<pp>` function is called with an address located at `0x16(%esp)`.
+>The `<pp>` function is called with an address located at `0x16(%esp)`.
 
 ```
    0x08048526 <+8>:     mov    DWORD PTR [esp+0x4],0x80486a0
@@ -125,7 +125,7 @@ End of assembler dump.
    0x08048544 <+38>:    mov    DWORD PTR [esp],eax
    0x08048547 <+41>:    call   0x80484b4 <p>
 ```
-> The `<p>` function is called twice, each time with a stack address.
+>The `<p>` function is called twice, each time with a stack address.
 
 ```
    0x080484c8 <+20>:    mov    DWORD PTR [esp+0x8],0x1000
@@ -151,7 +151,7 @@ End of assembler dump.
    0x08048514 <+96>:    mov    DWORD PTR [esp],eax
    0x08048517 <+99>:    call   0x80483f0 <strncpy@plt>
 ```
-> The `<p>` function `<read@plt>` from stdin with a size of 4096, then attempts to replace the first '\n' in the read buffer with a '\0', and finally copies the first 20 bytes of this buffer to the address provided as a parameter to the function.
+>The `<p>` function `<read@plt>` from stdin with a size of 4096, then attempts to replace the first '\n' in the read buffer with a '\0', and finally copies the first 20 bytes of this buffer to the address provided as a parameter to the function.
 
 ```
    0x0804854c <+46>:    lea    eax,[ebp-0x30]
@@ -170,7 +170,7 @@ End of assembler dump.
    0x08048577 <+89>:    mov    edi,edx
    0x08048579 <+91>:    repnz scas al,BYTE PTR es:[edi]
 ```
-> The first buffer is copied to the address provided as a parameter to the `<pp>` function. Afterward, we will count the number of bytes that separate this address from the first '\0'.
+>The first buffer is copied to the address provided as a parameter to the `<pp>` function. Afterward, we will count the number of bytes that separate this address from the first '\0'.
 
 ```
    0x0804857b <+93>:    mov    eax,ecx
@@ -188,7 +188,7 @@ End of assembler dump.
    0x08048595 <+119>:   mov    DWORD PTR [esp],eax
    0x08048598 <+122>:   call   0x8048390 <strcat@plt>
 ```
-> Put a space before the previously found '\0', then concatenate the second buffer.
+>Put a space before the previously found '\0', then concatenate the second buffer.
 
 - So, if the first buffer given to the `<p>` function doesn't contain a '\0', but the second one does, `<strcat@plt>` will concatenate the second buffer after the '\0' it contains, and its content could potentially overwrite the return address of the `<main>` function.
 

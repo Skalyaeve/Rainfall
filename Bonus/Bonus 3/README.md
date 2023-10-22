@@ -100,11 +100,11 @@ End of assembler dump.
    0x08048513 <+31>:    call   0x8048410 <fopen@plt>
    0x08048518 <+36>:    mov    %eax,0x9c(%esp)
 ```
-> `0x80486f0: "r"`
+>`0x80486f0: "r"`
 
-> `0x80486f2: "/home/user/end/.pass"`
+>`0x80486f2: "/home/user/end/.pass"`
 
-> Open the latest flag in read mode, store its file descriptor in `0x9c(%esp)`.
+>Open the latest flag in read mode, store its file descriptor in `0x9c(%esp)`.
 
 ```
    0x0804854d <+89>:    lea    0x18(%esp),%eax
@@ -115,7 +115,7 @@ End of assembler dump.
    0x0804856c <+120>:   mov    %eax,(%esp)
    0x0804856f <+123>:   call   0x80483d0 <fread@plt>
 ```
-> Read the flag, its content will be stored in `0x18(%esp)`.
+>Read the flag, its content will be stored in `0x18(%esp)`.
 
 ```
    0x08048574 <+128>:   movb   $0x0,0x59(%esp)
@@ -126,7 +126,7 @@ End of assembler dump.
    0x08048584 <+144>:   call   0x8048430 <atoi@plt>
    0x08048589 <+149>:   movb   $0x0,0x18(%esp,%eax,1)
 ```
-> `<atoi@plt>` the parameter given to the program, then NULL terminate the content of the flag at the index corresponding to the return of `<atoi@plt>`.
+>`<atoi@plt>` the parameter given to the program, then NULL terminate the content of the flag at the index corresponding to the return of `<atoi@plt>`.
 
 ```
    0x080485c7 <+211>:   mov    0xc(%ebp),%eax
@@ -147,9 +147,9 @@ End of assembler dump.
    0x080485fa <+262>:   call   0x8048420 <execl@plt>
    0x080485ff <+267>:   jmp    0x8048610 <main+284>
 ```
-> `0x804870a: "/bin/sh"`
+>`0x804870a: "/bin/sh"`
 
-> Compare the given parameter to the program with the content of the flag, open a shell if the values are identical.
+>Compare the given parameter to the program with the content of the flag, open a shell if the values are identical.
 
 - Sooooo....
 ```

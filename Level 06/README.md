@@ -75,7 +75,6 @@ End of assembler dump.
    0x080484b3 <+55>:    add    $0x4,%eax
    0x080484b6 <+58>:    mov    (%eax),%eax
    0x080484b8 <+60>:    mov    %eax,%edx
-
    0x080484ba <+62>:    mov    0x1c(%esp),%eax
    0x080484be <+66>:    mov    %edx,0x4(%esp)
    0x080484c2 <+70>:    mov    %eax,(%esp)

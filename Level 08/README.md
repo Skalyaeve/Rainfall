@@ -163,7 +163,6 @@ End of assembler dump.
    0x08048575 <+17>:    mov    0x8049ab0,%ecx
    0x0804857b <+23>:    mov    0x8049aac,%edx
    0x08048581 <+29>:    mov    $0x8048810,%eax
-
    0x08048586 <+34>:    mov    %ecx,0x8(%esp)
    0x0804858a <+38>:    mov    %edx,0x4(%esp)
    0x0804858e <+42>:    mov    %eax,(%esp)

@@ -159,7 +159,7 @@ End of assembler dump.
    0x08048574 <+75>:    mov    %eax,(%esp)
    0x08048577 <+78>:    call   0x80483c0 <strncpy@plt>
 ```
-> Copy 0x28 bytes from the first parameter passed to the program into `0x50(%esp)`.
+>Copy 0x28 bytes from the first parameter passed to the program into `0x50(%esp)`.
 
 ```
    0x0804857c <+83>:    mov    0xc(%ebp),%eax
@@ -172,7 +172,7 @@ End of assembler dump.
    0x08048597 <+110>:   mov    %eax,(%esp)
    0x0804859a <+113>:   call   0x80483c0 <strncpy@plt>
 ```
-> Copy 0x20 bytes from the second parameter provided to the program after the first buffer.
+>Copy 0x20 bytes from the second parameter provided to the program after the first buffer.
 
 ```
    0x0804859f <+118>:   movl   $0x8048738,(%esp)
@@ -181,9 +181,9 @@ End of assembler dump.
    0x080485b2 <+137>:   cmpl   $0x0,0x9c(%esp)
    0x080485ba <+145>:   je     0x8048618 <main+239>
 ```
-> `0x8048738: "LANG"`
+>`0x8048738: "LANG"`
 
-> If the "LANG" environment variable does not exist, jump to `<main+239>` (just before the call to the `<greetuser>` function).
+>If the "LANG" environment variable does not exist, jump to `<main+239>` (just before the call to the `<greetuser>` function).
 
 ```
    0x080485bc <+147>:   movl   $0x2,0x8(%esp)
@@ -207,13 +207,13 @@ End of assembler dump.
    0x0804860c <+227>:   jne    0x8048618 <main+239>
    0x0804860e <+229>:   movl   $0x2,0x8049988
 ```
-> `0x804873d: "fi"`
+>`0x804873d: "fi"`
 
-> `0x8048740: "nl"`
+>`0x8048740: "nl"`
 
-> `0x8049988 <language>: 0x00000000`
+>`0x8049988 <language>: 0x00000000`
 
-> If the first two characters of the return from `<getenv@plt>` are "fi" / "nl", set the variable `<language>` to 1 / 2, then jump to `<main+239>`.
+>If the first two characters of the return from `<getenv@plt>` are "fi" / "nl", set the variable `<language>` to 1 / 2, then jump to `<main+239>`.
 
 ```
    0x08048618 <+239>:   mov    %esp,%edx
@@ -226,7 +226,7 @@ End of assembler dump.
    0x0804862b <+258>:   call   0x8048484 <greetuser>
 
 ```
-> Copy 0x13 times 4 bytes from the buffer containing our parameters to the beginning of the stack, then call the `<greetuser>` function.
+>Copy 0x13 times 4 bytes from the buffer containing our parameters to the beginning of the stack, then call the `<greetuser>` function.
 
 - So, the `<main>` function takes two arguments that it copies onto the stack. Then it attempts to set the `<language>` variable before preparing the stack for the `<greetuser>` function call. Let's now take a closer look at the `<greetuser>` function.
 ```
@@ -238,7 +238,7 @@ End of assembler dump.
    0x08048499 <+21>:    test   %eax,%eax
    0x0804849b <+23>:    jne    0x804850a <greetuser+134>
 ```
-> Redirect the program's execution flow based on the value of the `<language>` variable.
+>Redirect the program's execution flow based on the value of the `<language>` variable.
 
 ```
    0x0804849d <+25>:    mov    $0x8048710,%edx
@@ -251,7 +251,7 @@ End of assembler dump.
    0x080484b5 <+49>:    mov    %dl,0x6(%eax)
    0x080484b8 <+52>:    jmp    0x804850a <greetuser+134>
 ```
-> `0x8048710: "Hello "`
+>`0x8048710: "Hello "`
 
 ```
    0x080484ba <+54>:    mov    $0x8048717,%edx
@@ -270,7 +270,7 @@ End of assembler dump.
    0x080484e4 <+96>:    mov    %dl,0x12(%eax)
    0x080484e7 <+99>:    jmp    0x804850a <greetuser+134>
 ```
-> `0x8048717: "Hyvää päivää "`
+>`0x8048717: "Hyvää päivää "`
 
 ```
    0x080484e9 <+101>:   mov    $0x804872a,%edx
@@ -284,7 +284,7 @@ End of assembler dump.
    0x08048501 <+125>:   movzwl 0xc(%edx),%edx
    0x08048505 <+129>:   mov    %dx,0xc(%eax)
 ```
-> `0x804872a: "Goedemiddag! "`
+>`0x804872a: "Goedemiddag! "`
 
 ```
    0x0804850a <+134>:   lea    0x8(%ebp),%eax

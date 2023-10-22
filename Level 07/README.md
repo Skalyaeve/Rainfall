@@ -96,7 +96,7 @@ End of assembler dump.
 ```
 >Allocate a block of memory of 8 bytes in the heap. Then, store the addresses of the allocated memory blocks 4 bytes after the start of the memory zone allocated by the first `<malloc@plt>`.
 
-> At this point, the 8 bytes allocated by the first malloc contain `0x01 0x00 0x00 0x00 0xb0 0xa1 0x04 0x08`, which is the constant 1 followed by the address `0x0804a1b0`.
+>At this point, the 8 bytes allocated by the first malloc contain `0x01 0x00 0x00 0x00 0xb0 0xa1 0x04 0x08`, which is the constant 1 followed by the address `0x0804a1b0`.
 
 
 ```
@@ -118,7 +118,7 @@ End of assembler dump.
 ```
 >Allocate a block of memory of 8 bytes in the heap. Then, store the addresses of the allocated memory blocks 4 bytes after the start of the memory zone allocated by the third `<malloc@plt>`.
 
-> At this point, the 8 bytes allocated by the third malloc contain `0x02 0x00 0x00 0x00 0xd0 0xa1 0x04 0x08`, which is the constant 2 followed by the address `0x0804a1d0`.
+>At this point, the 8 bytes allocated by the third malloc contain `0x02 0x00 0x00 0x00 0xd0 0xa1 0x04 0x08`, which is the constant 2 followed by the address `0x0804a1d0`.
 
 
 - So, two memory areas are allocated in the heap to contain the addresses of two other memory areas. Let's see what happens next:
@@ -127,15 +127,13 @@ End of assembler dump.
    0x0804858b <+106>:   add    $0x4,%eax
    0x0804858e <+109>:   mov    (%eax),%eax
    0x08048590 <+111>:   mov    %eax,%edx
-
    0x08048592 <+113>:   mov    0x1c(%esp),%eax
    0x08048596 <+117>:   mov    0x4(%eax),%eax
-
    0x08048599 <+120>:   mov    %edx,0x4(%esp)
    0x0804859d <+124>:   mov    %eax,(%esp)
    0x080485a0 <+127>:   call   0x80483e0 <strcpy@plt>
 ```
-> Copy the first input parameter of the program into the memory area allocated by the second malloc.
+>Copy the first input parameter of the program into the memory area allocated by the second malloc.
 
 
 ```
@@ -143,21 +141,18 @@ End of assembler dump.
    0x080485a8 <+135>:   add    $0x8,%eax
    0x080485ab <+138>:   mov    (%eax),%eax
    0x080485ad <+140>:   mov    %eax,%edx
-
    0x080485af <+142>:   mov    0x18(%esp),%eax
    0x080485b3 <+146>:   mov    0x4(%eax),%eax
-
    0x080485b6 <+149>:   mov    %edx,0x4(%esp)
    0x080485ba <+153>:   mov    %eax,(%esp)
    0x080485bd <+156>:   call   0x80483e0 <strcpy@plt>
 ```
-> Copy the second input parameter of the program into the memory area allocated by the fourth malloc.
+>Copy the second input parameter of the program into the memory area allocated by the fourth malloc.
 
 
 ```
    0x080485c2 <+161>:   mov    $0x80486e9,%edx
    0x080485c7 <+166>:   mov    $0x80486eb,%eax
-
    0x080485cc <+171>:   mov    %edx,0x4(%esp)
    0x080485d0 <+175>:   mov    %eax,(%esp)
    0x080485d3 <+178>:   call   0x8048430 <fopen@plt>
