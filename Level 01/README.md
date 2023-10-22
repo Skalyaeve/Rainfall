@@ -37,9 +37,6 @@ The program generously allows us to write without limits into its stack.
 We just need to write enough characters to reach the return address of the `main` function.
 Then, we will replace this address with the address of a memory area that will contain a [shellcode](https://en.wikipedia.org/wiki/Shellcode) which will call `execve("/bin/sh")`.
 
->![stack1](https://upload.wikimedia.org/wikipedia/commons/0/00/Pile_avant_appel.png?20120112163251)![stack2](https://upload.wikimedia.org/wikipedia/commons/d/d9/Pile_debordement.gif?20120112163309)
-
-
 - First, we need to know from how many characters the return address of our function starts to be substituted. It can be done quickly using a tool like [Metasploit](https://en.wikipedia.org/wiki/Metasploit).
 ```
 $msf-pattern_create -l [pattern length] | [binary]
