@@ -32,7 +32,6 @@ Dump of assembler code for function main:
    0x08048556 <+45>:    mov    %ebx,%edi
    0x08048558 <+47>:    mov    %edx,%ecx
    0x0804855a <+49>:    rep stos %eax,%es:(%edi)
-
    0x0804855c <+51>:    mov    0xc(%ebp),%eax
    0x0804855f <+54>:    add    $0x4,%eax
    0x08048562 <+57>:    mov    (%eax),%eax
@@ -41,7 +40,6 @@ Dump of assembler code for function main:
    0x08048570 <+71>:    lea    0x50(%esp),%eax
    0x08048574 <+75>:    mov    %eax,(%esp)
    0x08048577 <+78>:    call   0x80483c0 <strncpy@plt>
-
    0x0804857c <+83>:    mov    0xc(%ebp),%eax
    0x0804857f <+86>:    add    $0x8,%eax
    0x08048582 <+89>:    mov    (%eax),%eax
@@ -51,13 +49,11 @@ Dump of assembler code for function main:
    0x08048594 <+107>:   add    $0x28,%eax
    0x08048597 <+110>:   mov    %eax,(%esp)
    0x0804859a <+113>:   call   0x80483c0 <strncpy@plt>
-
    0x0804859f <+118>:   movl   $0x8048738,(%esp)
    0x080485a6 <+125>:   call   0x8048380 <getenv@plt>
    0x080485ab <+130>:   mov    %eax,0x9c(%esp)
    0x080485b2 <+137>:   cmpl   $0x0,0x9c(%esp)
    0x080485ba <+145>:   je     0x8048618 <main+239>
-
    0x080485bc <+147>:   movl   $0x2,0x8(%esp)
    0x080485c4 <+155>:   movl   $0x804873d,0x4(%esp)
    0x080485cc <+163>:   mov    0x9c(%esp),%eax
@@ -67,7 +63,6 @@ Dump of assembler code for function main:
    0x080485dd <+180>:   jne    0x80485eb <main+194>
    0x080485df <+182>:   movl   $0x1,0x8049988
    0x080485e9 <+192>:   jmp    0x8048618 <main+239>
-
    0x080485eb <+194>:   movl   $0x2,0x8(%esp)
    0x080485f3 <+202>:   movl   $0x8048740,0x4(%esp)
    0x080485fb <+210>:   mov    0x9c(%esp),%eax
@@ -76,7 +71,6 @@ Dump of assembler code for function main:
    0x0804860a <+225>:   test   %eax,%eax
    0x0804860c <+227>:   jne    0x8048618 <main+239>
    0x0804860e <+229>:   movl   $0x2,0x8049988
-
    0x08048618 <+239>:   mov    %esp,%edx
    0x0804861a <+241>:   lea    0x50(%esp),%ebx
    0x0804861e <+245>:   mov    $0x13,%eax
@@ -85,7 +79,6 @@ Dump of assembler code for function main:
    0x08048627 <+254>:   mov    %eax,%ecx
    0x08048629 <+256>:   rep movsl %ds:(%esi),%es:(%edi)
    0x0804862b <+258>:   call   0x8048484 <greetuser>
-
    0x08048630 <+263>:   lea    -0xc(%ebp),%esp
    0x08048633 <+266>:   pop    %ebx
    0x08048634 <+267>:   pop    %esi
@@ -100,7 +93,6 @@ Dump of assembler code for function greetuser:
    0x08048484 <+0>:     push   %ebp
    0x08048485 <+1>:     mov    %esp,%ebp
    0x08048487 <+3>:     sub    $0x58,%esp
-
    0x0804848a <+6>:     mov    0x8049988,%eax
    0x0804848f <+11>:    cmp    $0x1,%eax
    0x08048492 <+14>:    je     0x80484ba <greetuser+54>
@@ -108,7 +100,6 @@ Dump of assembler code for function greetuser:
    0x08048497 <+19>:    je     0x80484e9 <greetuser+101>
    0x08048499 <+21>:    test   %eax,%eax
    0x0804849b <+23>:    jne    0x804850a <greetuser+134>
-
    0x0804849d <+25>:    mov    $0x8048710,%edx
    0x080484a2 <+30>:    lea    -0x48(%ebp),%eax
    0x080484a5 <+33>:    mov    (%edx),%ecx
@@ -118,7 +109,6 @@ Dump of assembler code for function greetuser:
    0x080484b1 <+45>:    movzbl 0x6(%edx),%edx
    0x080484b5 <+49>:    mov    %dl,0x6(%eax)
    0x080484b8 <+52>:    jmp    0x804850a <greetuser+134>
-
    0x080484ba <+54>:    mov    $0x8048717,%edx
    0x080484bf <+59>:    lea    -0x48(%ebp),%eax
    0x080484c2 <+62>:    mov    (%edx),%ecx
@@ -134,7 +124,6 @@ Dump of assembler code for function greetuser:
    0x080484e0 <+92>:    movzbl 0x12(%edx),%edx
    0x080484e4 <+96>:    mov    %dl,0x12(%eax)
    0x080484e7 <+99>:    jmp    0x804850a <greetuser+134>
-
    0x080484e9 <+101>:   mov    $0x804872a,%edx
    0x080484ee <+106>:   lea    -0x48(%ebp),%eax
    0x080484f1 <+109>:   mov    (%edx),%ecx
@@ -146,7 +135,6 @@ Dump of assembler code for function greetuser:
    0x08048501 <+125>:   movzwl 0xc(%edx),%edx
    0x08048505 <+129>:   mov    %dx,0xc(%eax)
    0x08048509 <+133>:   nop
-
    0x0804850a <+134>:   lea    0x8(%ebp),%eax
    0x0804850d <+137>:   mov    %eax,0x4(%esp)
    0x08048511 <+141>:   lea    -0x48(%ebp),%eax
@@ -225,7 +213,7 @@ End of assembler dump.
 
 > `0x8049988 <language>: 0x00000000`
 
-> If the first two characters of the return from `<getenv@plt>` are "fi"/"nl", set the variable `<language>` to 1/2, then jump to `<main+239>`.
+> If the first two characters of the return from `<getenv@plt>` are "fi" / "nl", set the variable `<language>` to 1 / 2, then jump to `<main+239>`.
 
 ```
    0x08048618 <+239>:   mov    %esp,%edx
@@ -263,7 +251,7 @@ End of assembler dump.
    0x080484b5 <+49>:    mov    %dl,0x6(%eax)
    0x080484b8 <+52>:    jmp    0x804850a <greetuser+134>
 ```
-> `0x8048710: "Hello "`&
+> `0x8048710: "Hello "`
 
 ```
    0x080484ba <+54>:    mov    $0x8048717,%edx
@@ -309,9 +297,9 @@ End of assembler dump.
    0x08048522 <+158>:   call   0x8048390 <puts@plt>
 ```
 
-- The `<greetuser>` function will simply concatenate our parameters to a greeting message and then display it. The greeting message depends on the "LANG" environment variable. The problem is that it concatenates a buffer that can contain up to 0x48 characters after a string in an area located just 0x48 bytes above the ebp. If the buffer actually contains 0x48 characters, this has the effect of modifying the return address of the `<greetuser>` function (an address located just before ebp).
+- The `<greetuser>` function will simply concatenate a greeting message with our parameters and then will display it. The greeting message depends on the "LANG" environment variable. The problem is that it concatenates a buffer that can contain up to 0x48 characters after a string, in an area located just 0x48 bytes above ebp. So if the buffer actually contains 0x48 characters, this will modify the return address of the `<greetuser>` function.
 
-- However, when the chosen language is neither "fi" nor "nl," English is chosen by default. The English greeting message is not long enough to allow our buffer to completely modify the return address of `<greetuser>`. To fully exploit this vulnerability, we will first need to change the "LANG" environment variable.
+- However, when the chosen language is neither "fi" nor "nl", english is chosen by default. The English greeting message is not long enough to allow our buffer to completely modify the return address of `<greetuser>`. To fully exploit this vulnerability, we will first need to change the "LANG" environment variable.
 
 - So:
 ```
